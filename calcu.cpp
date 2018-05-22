@@ -7,11 +7,11 @@ Calcu::Calcu()
 {
 }
 
-int Calcu::ducalcu(string s)
+double Calcu::ducalcu(string s)
 {
     stack<char>houzhui;   //转换后缀表达式用
     vector<int>strmmm;    //后缀表达式存储
-    stack<int>stc_int;
+    stack<double>stc_int;
     string jiangzemin;   //分解表达式中的数字
     auto its = s.begin();
     while (its !=s.end())
@@ -109,7 +109,7 @@ int Calcu::ducalcu(string s)
 
         if (*it2 == -'+' || *it2 ==- '-' || *it2 ==- '*' || *it2 ==- '/')
         {
-            int a = 0, b = 0;
+            double a = 0, b = 0;
             a = stc_int.top();
             stc_int.pop();
             b = stc_int.top();
@@ -133,6 +133,6 @@ int Calcu::ducalcu(string s)
         }
 
     }
-    int result = stc_int.top();
+    double result = stc_int.top();
     return result;
 }
