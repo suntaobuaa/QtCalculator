@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+//#include <QMessageBox>
 
 namespace Ui {
 class MainWindow;
@@ -14,6 +15,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+
 public slots:
     void showtext_1();
     void showtext_2();
@@ -31,11 +34,16 @@ public slots:
     void showtext_14();
     void showtext_15();
     void showtext_16();
+
+    void showwaring();
+
+
 private:
     Ui::MainWindow *ui;
     QString shurubiaodashi;
     bool ifaftercalcu=false;
     void beforeshuru();
+
 
 };
 

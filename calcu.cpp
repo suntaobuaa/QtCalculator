@@ -9,10 +9,10 @@ Calcu::Calcu()
 
 int Calcu::ducalcu(string s)
 {
-    stack<char>houzhui;
-    vector<int>strmmm;
+    stack<char>houzhui;   //转换后缀表达式用
+    vector<int>strmmm;    //后缀表达式存储
     stack<int>stc_int;
-    string jiangzemin,empt;
+    string jiangzemin;   //分解表达式中的数字
     auto its = s.begin();
     while (its !=s.end())
     {

@@ -1,7 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "calcu.h"
-#include <QSizePolicy>
+#include "checknum.h"
+#include<QMessageBox>
+//#include <QSizePolicy>
+
 
 //#include<QWidget>
 
@@ -153,12 +156,34 @@ void MainWindow::showtext_16()
 
 void MainWindow::showtext_12() //特殊
 {
+
+    if(!Checknum::islegal(shurubiaodashi))
+    {
+        showwaring();
+        return;  //退出函数体
+    }
+
      int  str_resul;
- //    QString qstr_resul;
+
      str_resul = Calcu::ducalcu(shurubiaodashi.toStdString());
      shurubiaodashi = QString::number(str_resul,10);
      ui->lineEdit->setText(shurubiaodashi);
      ifaftercalcu = true;
+
+}
+
+void MainWindow::showwaring()
+{
+    switch (QMessageBox::warning(this,tr("警告"),tr("输入的算式有误，请重新输入")))
+    {
+    case QMessageBox::Ok:
+      //   setWindowTitle("知道出错了");
+         ui->lineEdit->clear();
+         shurubiaodashi.clear();
+        break;
+    default:
+        break;
+    }
 
 }
 
@@ -171,6 +196,7 @@ void MainWindow::beforeshuru()
         ui->lineEdit->clear();
     }
 }
+
 
 MainWindow::~MainWindow()
 {

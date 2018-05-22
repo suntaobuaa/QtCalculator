@@ -6,7 +6,7 @@ class Calcu
 {
 public:
     Calcu();
-   static int ducalcu(string);
+    static int ducalcu(string);
 };
 
 #endif // CALCU_H

@@ -25,9 +25,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    calcu.cpp
+    calcu.cpp \
+    checknum.cpp
 
 HEADERS  += mainwindow.h \
-    calcu.h
+    calcu.h \
+    checknum.h
 
 FORMS    += mainwindow.ui
