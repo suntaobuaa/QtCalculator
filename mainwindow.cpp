@@ -35,6 +35,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->pushButton_11,SIGNAL(clicked(bool)),this,SLOT(showtext_11()));
     connect(ui->pushButton_15,SIGNAL(clicked(bool)),this,SLOT(showtext_15()));
     connect(ui->pushButton_9,SIGNAL(clicked(bool)),this,SLOT(showtext_9()));
+    connect(ui->pushButton_17,SIGNAL(clicked(bool)),this,SLOT(showtext_17()));
     //
     connect(ui->pushButton_12,SIGNAL(clicked(bool)),this,SLOT(showtext_12()));
 
@@ -146,6 +147,13 @@ void MainWindow::showtext_16()
 {
     beforeshuru();
     shurubiaodashi.append("4");
+    ui->lineEdit->setText(shurubiaodashi);
+
+}
+void MainWindow::showtext_17()
+{
+    beforeshuru();
+    shurubiaodashi.append("0");
     ui->lineEdit->setText(shurubiaodashi);
 
 }
