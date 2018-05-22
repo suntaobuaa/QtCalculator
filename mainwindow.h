@@ -35,6 +35,8 @@ public slots:
     void showtext_15();
     void showtext_16();
     void showtext_17();
+    void showtext_18();
+    void showtext_19();
 
     void showwaring();
 
