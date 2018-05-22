@@ -38,6 +38,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->pushButton_17,SIGNAL(clicked(bool)),this,SLOT(showtext_17()));
     //
     connect(ui->pushButton_12,SIGNAL(clicked(bool)),this,SLOT(showtext_12()));
+    connect(ui->pushButton_18,SIGNAL(clicked(bool)),this,SLOT(showtext_18()));
+    connect(ui->pushButton_19,SIGNAL(clicked(bool)),this,SLOT(showtext_19()));
 
 
 
@@ -160,9 +162,9 @@ void MainWindow::showtext_17()
 
 
 
-//
+//三个特殊slot
 
-void MainWindow::showtext_12() //特殊
+void MainWindow::showtext_12()
 {
 
     if(!Checknum::islegal(shurubiaodashi))
@@ -179,6 +181,24 @@ void MainWindow::showtext_12() //特殊
      ifaftercalcu = true;
 
 }
+
+
+void MainWindow::showtext_18()
+{
+
+    shurubiaodashi.clear();
+    ui->lineEdit->clear();
+
+}
+
+void MainWindow::showtext_19()
+{
+
+    shurubiaodashi = shurubiaodashi.left(shurubiaodashi.length()-1);
+    ui->lineEdit->setText(shurubiaodashi);
+
+}
+
 
 void MainWindow::showwaring()
 {
