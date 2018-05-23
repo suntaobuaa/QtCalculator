@@ -2,7 +2,10 @@
 #include<vector>
 #include<stack>
 #include<QDebug>
+#include<string>
 using namespace std;
+string q;
+
 Calcu::Calcu()
 {
 }
@@ -10,7 +13,7 @@ Calcu::Calcu()
 double Calcu::ducalcu(string s)
 {
     stack<char>houzhui;   //转换后缀表达式用
-    vector<int>strmmm;    //后缀表达式存储
+    vector<double>strmmm;    //后缀表达式存储
     stack<double>stc_int;
     string jiangzemin;   //分解表达式中的数字
     auto its = s.begin();
@@ -25,13 +28,13 @@ double Calcu::ducalcu(string s)
     for (auto it = s.begin(); it != s.end(); it++)
     {
 
-        if (isdigit(*it))
+        if (isdigit(*it)||*it == '.')
             jiangzemin.push_back(*it);
         else if (houzhui.empty())
         {
             if (*it!='('&&*(it-1)!=')')
             {
-                strmmm.push_back(stoi(jiangzemin));
+                strmmm.push_back(stod(jiangzemin));
                 jiangzemin.clear();
             }
 
@@ -45,7 +48,7 @@ double Calcu::ducalcu(string s)
         {
             if (isdigit(*(it - 1)))
             {
-                strmmm.push_back(stoi(jiangzemin));
+                strmmm.push_back(stod(jiangzemin));
                 jiangzemin.clear();
             }
 
@@ -93,7 +96,7 @@ double Calcu::ducalcu(string s)
     }
     if (isdigit(*(s.end()-1)))
     {
-        strmmm.push_back(stoi(jiangzemin));
+        strmmm.push_back(stod(jiangzemin));
         jiangzemin.clear();
     }
 
@@ -114,7 +117,7 @@ double Calcu::ducalcu(string s)
             stc_int.pop();
             b = stc_int.top();
             stc_int.pop();
-            switch(-*it2)
+            switch(static_cast<int>(-*it2))
             {
             case '+': b = b + a;
                 break;

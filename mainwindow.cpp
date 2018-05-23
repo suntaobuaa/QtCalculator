@@ -36,6 +36,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->pushButton_15,SIGNAL(clicked(bool)),this,SLOT(showtext_15()));
     connect(ui->pushButton_9,SIGNAL(clicked(bool)),this,SLOT(showtext_9()));
     connect(ui->pushButton_17,SIGNAL(clicked(bool)),this,SLOT(showtext_17()));
+    connect(ui->pushButton_20,SIGNAL(clicked(bool)),this,SLOT(showtext_20()));
     //
     connect(ui->pushButton_12,SIGNAL(clicked(bool)),this,SLOT(showtext_12()));
     connect(ui->pushButton_18,SIGNAL(clicked(bool)),this,SLOT(showtext_18()));
@@ -160,6 +161,13 @@ void MainWindow::showtext_17()
 
 }
 
+void MainWindow::showtext_20()
+{
+    beforeshuru();
+    shurubiaodashi.append(".");
+    ui->lineEdit->setText(shurubiaodashi);
+
+}
 
 
 //三个特殊slot
