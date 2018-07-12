@@ -38,4 +38,7 @@ FORMS    += mainwindow.ui
 
 #INCLUDEPATH += C:\android-ndk-r15c\sources\cxx-stl\llvm-libc++\include
 
+RESOURCES += \
+    icon.qrc
+
 

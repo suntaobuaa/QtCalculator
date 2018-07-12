@@ -13,6 +13,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->pushButton_19->setIcon(QIcon(":/new/prefix1/icon/back.png"));
+
+
     /*
     QSizePolicy centerwidgetSizePolicy = ui->centralWidget->sizePolicy();
     centerwidgetSizePolicy.setHorizontalStretch(2);
@@ -184,7 +187,7 @@ void MainWindow::showtext_12()
      double  str_resul;
 
      str_resul = Calcu::ducalcu(shurubiaodashi.toStdString());
-     shurubiaodashi = QString("niubility").setNum(str_resul,'f',3);
+     shurubiaodashi = QString("niubility").setNum(str_resul,'f',2);
      ui->lineEdit->setText(shurubiaodashi);
      ifaftercalcu = true;
 

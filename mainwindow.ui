@@ -435,10 +435,6 @@
     <property name="text">
      <string/>
     </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>../../Desktop/font-443.png</normaloff>../../Desktop/font-443.png</iconset>
-    </property>
     <property name="iconSize">
      <size>
       <width>41</width>
