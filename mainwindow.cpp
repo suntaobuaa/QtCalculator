@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->pushButton_19->setIcon(QIcon(":/new/prefix1/icon/back.png"));
+    setWindowIcon(QIcon(":/new/prefix1/icon/cal.png"));
 
 
     /*
